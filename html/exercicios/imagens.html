@@ -1,0 +1,95 @@
+<div wm-slider> 
+    <div>
+    
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" 
+        alt="Muro da Cidade"
+        width="513" height="342"
+        title="Muro da Cidade por Tarso Bessa">
+    
+    </p>
+    
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif"
+        alt="Intro Cod3r" height="342">
+    </p>
+    
+    <p class="circular">
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png"
+        alt="Rio de Janeiro" height="342">
+    </p>
+    
+    <p class="texto">  
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg"
+        alt="Avatar" height="50" align="left">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit
+    </p>
+    
+    <p class="cidade">  
+    
+    </p>
+    
+    <p>
+        <picture>
+            <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"
+            media="(min-width: 600px)">
+            <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="logo">
+        </picture>
+    </p>
+    </div>
+</div>
+
+
+<style>
+    .circular{
+        width: 513px;
+        background-color: #444;
+    }
+
+    .texto{
+        width: 400px;
+    }
+
+    .texto img{
+        margin-right: 12px;
+    }
+
+    .cidade {
+        width: 513px;
+        height: 342px;
+        background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200%;
+
+    }
+
+    [wm-slider] {
+        overflow: hidden; /* O MAIS IMPORTANTE: Esconde tudo o que sai da largura da tela */
+        width: 100%; /* Faz o slider ocupar toda a largura da página */
+        background-color: #fff;
+        padding: 20px 0;
+    }
+
+    [wm-slider] > div { /* se utiliza o > para selecionar apenas o elemento div que é filho direto do wm-slider, e não os outros divs que estão dentro do slider */
+        display: flex;  /* <!--flex, para colocar os itens um do lado do outro--> */
+        align-items: center;  /* Alinha itens de alturas diferentes pelo meio */
+        gap: 50px; /* Cria um espaçamento fixo de 50px entre cada item */
+        width: max-content; /* Força a div a ter a largura exata da soma de todos os itens (faz com que todas as imagens tenha o mesmo "tamanho") */
+        animation: slider-animation 20s linear infinite;
+       
+    }
+
+    [wm-slider] p {
+        margin: 0;
+        flex-shrink: 0; /* Impede que o Flexbox "esmague" as imagens para caber no espaço, O Flexbox, por natureza, tenta fazer os itens caberem no container. Se você tiver muitas imagens, ele pode tentar diminuir a largura delas. O valor 0 diz: "Não mude meu tamanho, mantenha o original". */
+    }
+
+    @keyframes slider-animation{ /* utiliza- se o @ paraa instruções maiss complexas, como animações, media queries, etc. */
+        from{ transform: translateX(100vw);}
+        to {transform: translateX(-100%)}
+    }
+
+
+
+</style>

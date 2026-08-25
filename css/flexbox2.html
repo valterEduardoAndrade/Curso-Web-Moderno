@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox #02</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        div{
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+        }
+
+        .flex-container div{
+            box-sizing: border-box;
+        }
+
+        .flex-container{
+            display: flex;
+            height: 300px;
+            width: 600px;
+        }
+
+
+        .flex-container div:nth-child(3){ /*Nesse casoo ele vai para a class flex-container, que está marcado com uma div, e dessa div ele pegará o 3 filho */
+            background-color: indianred;
+            order: 1; /*Em todos os itens do flex container tem uma order 0 (peso 0), nesse caso foi dado order 1 para que se sobressaia dos outros e passa a ser o ultimo, pois tem a order(peso) maior que os outros */
+            order: 0;
+            order: -1;
+            align-self: center; /* Alinha um determinado elemento em especifico do flex-itens*/
+            align-self: flex-end;
+            align-self: flex-start;
+            align-self: stretch;
+        }
+
+        .flex-container div{
+            width: 100px;
+            flex-grow: 0; /* O FLEX-GROW, divide o peso em que cada elemento doo flex-container que está marcado com uma div, cresce, nesse caso , todos crescem igual(crescem a partir do que sobra do flex container) */
+            flex-grow: 1;
+        }
+
+         .flex-container div:nth-child(1){ 
+            flex-grow: 2;
+         }
+
+         .flex-container {
+            width: 300px;
+            flex-shrink: 1;
+         }
+
+          .flex-container div:nth-child(1){
+            flex-shrink: 5;
+          }
+
+    
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

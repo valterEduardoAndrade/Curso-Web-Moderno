@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Position</title>
+    <style>
+        div{
+            font-size: 60px;
+            padding: 30px;
+            border: solid 5px #222;
+            color: #fff
+        }
+    
+        .static{ /*o static nessse caso desconsidera o top e o left */
+            top: 100px;
+            left: 100px;
+            background-color: steelblue;
+        }
+
+        .fixed { /*o fixed ele permite rolar a pagina e o que estiver no fixed aparecerar sempre */
+            position: fixed;
+            bottom: 30px; /* 30px do fundo */
+            right: 0px;
+            background-color: tomato;
+        }
+
+        .relative1{ /*O relative ele considera o elemento anterior, então nesse caso ele fica 50px do elemento a esquerda dele e 5px do elemento que está emcima dele, não necessariamente da pagina */
+            position: relative;
+            left: 50px;
+            top: 5px;
+            background-color: seagreen;
+        }
+
+        .absolute1{ /* absolute ele vai passar por cima de outros elementos */
+            position: absolute;
+            left: 350px;
+            top: 120px;
+            background-color: violet;
+        }
+
+        .relative2 {
+            position: relative;
+            left: 250px;
+            top: 2000px;
+            width: 200px;
+            height: 200px;
+            background-color: slategray;
+        }
+
+        .absolute2 { /* Nesse caso já como o absolute está dentro da div relative2, ele não seguira o html raiz do site como parametro e se posicionará a partir da div pai. Um ponto importante é que a div pai precisa ser marcada como relative, se não for marcada como tal não funcionará, pois a div seguirá o position padrão(static) e ai nesse caso o absolute seguirá o html raiz*/
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: orange;
+        }
+
+        .sticky{ /*Ele irá parar a 0px do topo da pagina assim que ele chegar(rolando a pagina) */
+            position: -webkit-sticky; /*Pro safari */
+            position: sticky;
+            background-color: #777;
+            top: 0px;
+
+        } 
+
+
+    </style>
+</head>
+
+<body>
+    <div class="static">Static (Padrão)</div>
+    <div class="fixed">Fixed</div>
+    <div class="relative1">Relative</div>
+    <div class="absolute1">Absolute</div>
+
+    <div class="relative2">
+        <div class="absolute2"></div>
+    </div>
+
+    <div class="sticky">Sticky</div>
+    <p style="padding-bottom: 2000px;">Opa</p>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class="conteudo exercicio">
+    <div>Elemento</div>
+    <script>
+        const item = document.querySelector('div')
+        item.style.position = 'absolute'
+
+        item.onmousemove = e => {
+            const item = e.target // nesse caso o e(event) vai ser a div pois ela é disparada no evento
+            item.style.cursor = 'move' // acrescenta o curso do mouse o estilo da cruzinha de mover padrão
+            if(e.buttons){  // verifica se alguem clicou com o mouse a partir do e(event).buttons
+                item.style.top = `${e.clientY - (item.clientHeight / 2)}px` //faz um calculo para que se o cursos for descendo ele o acompanhe
+                item.style.left = `${e.clientX - (item.clientWidth / 2)}px` //faz com que o curso vai pro meio da div
+            }
+        }
+    </script>
+</body>

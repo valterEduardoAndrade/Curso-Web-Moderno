@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <script>
+        const body = document.querySelector('body')
+
+        const div1 = document.createElement('div')
+        div1.classList.add('destaque')
+        div1.innerHTML = 'Primeiro'
+
+        const div2 = document.createElement('div')
+        div2.setAttribute('wm-atributo', 'valor')
+        div2.innerHTML = 'Segundo'
+
+        const p = document.createElement('p')
+        p.innerHTML = 'terceiro'
+
+        const div3 = document.createElement('div')
+        div3.appendChild(p) /*Coloco a minha tag p criado anteriormente dentro da minha tag div*/
+
+        body.appendChild(div1)
+        body.appendChild(div2)
+        body.appendChild(div3) /*Lembrando que a div3 tem filhos(a tag p), ela adiciona a tag e os seus filhos com appendChild*/
+
+
+        const texto = document.createTextNode('Antes....')
+        div3.insertBefore(texto, div3.childNodes[0])
+
+
+        const div4 = div3.cloneNode(true) /*No caso o true, significa que ele é uma clonagem profunda, clonando tudo inclusive os filhos. Se estiver marcado com false, não clonará os filhoes*/
+        body.appendChild(div4)
+        body.removeChild(div3)
+
+
+    </script>   
+</body>
+
+</html>

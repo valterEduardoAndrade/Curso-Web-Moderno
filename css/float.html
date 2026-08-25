@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Float</title>
+    <style>
+        body {
+            background-color: #222;
+        }
+        
+        .c1 {
+            background-color: red;
+            float:right;
+        }
+
+             /* O Clear é uma solução do float para que as
+             demais tags nesse contexto, considerem c1 que está marcado
+              com float: right como uma linha e não estejam no mesmo
+               nivel/altura de c1, se utilizar o clear ele desconsidera assim como mostrado no c2*/
+
+        .c2 {
+            background-color: green;
+            clear: right;
+            float: left;
+        }
+        
+        .c3 {
+            background-color: blue;
+            clear: both; /* Limpa tanto o left quanto o right*/
+        }
+
+        .c4 {
+            background-color: orange;
+            float: right;
+        }
+
+        div{
+            height: 150px;
+            width: 150px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="c1"></div>
+    <div class="c2"></div>
+    <div class="c3"></div>
+    <div class="c4"></div>
+</body>
+
+</html>

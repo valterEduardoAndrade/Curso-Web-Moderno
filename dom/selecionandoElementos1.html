@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <script>              
+        document.getElementById('primeiro').classList.add('destaque') /*esse "destaque" ele associa a tag do css do arquivo estilo.css e faz a atribuição*/
+
+        const divs = document.getElementsByTagName('div') /*Está no plural, ele pegara todos os elementos div*/
+        Array.from(divs).forEach(e => e.classList.remove('destaque')) /*o Array.from transforma aquela minha constante em um array, a partir do array é percorrido com o foreach e apartir do elemento, eu removo a lista  destaque*/
+
+        /*Transformando uma coleção html em array(spread)*/
+        const divsArray = [...divs] 
+        divsArray.forEach(e => e.classList.add('destaque'))
+
+
+        const ultimosElementos = document.getElementsByClassName('ultimo')
+        for(let e of ultimosElementos){
+            e.classList.remove('destaque')
+        }
+
+
+
+
+    </script>
+</body>
+</html>
